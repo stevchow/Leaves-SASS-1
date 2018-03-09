@@ -12,9 +12,10 @@ rgb(62, 140, 204)
 
 html {
   box-sizing: border-box;
-  font-size: 10px;
+  font-size: 62.5%;
 }
 
+*,
 *::before,
 *::after {
   box-sizing: inherit;
@@ -204,7 +205,7 @@ body {
   animation-fill-mode: backwards;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   html {
     font-size: 8px;
   }
@@ -212,6 +213,6 @@ body {
 
 @media (max-width: 600px) {
   html {
-    font-size: 6.9px;
+    font-size: 6.5px;
   }
 }
