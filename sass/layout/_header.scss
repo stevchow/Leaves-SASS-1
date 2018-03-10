@@ -1,0 +1,50 @@
+.header {
+  height: 95vh;
+  background: linear-gradient(
+      to right bottom,
+      rgba($color-primary-dark, 0.781),
+      rgba($color-primary-light, 0.397)
+    ),
+    url(../img/hero.jpg);
+  background-position: top;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 70vh, 40% 100%, 0 100%);
+  position: relative;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right bottom,
+        rgba(128, 161, 141, 0.781),
+        rgba(62, 140, 204, 0.397)
+      ),
+      url(../img/hero.jpg);
+    background-position: top;
+    background-size: cover;
+    clip-path: polygon(43.2% 100%, 100% 71.5vh, 100% 100%);
+  }
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 5.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}

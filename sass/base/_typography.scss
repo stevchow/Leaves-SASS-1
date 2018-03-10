@@ -1,0 +1,38 @@
+body {
+  padding: 3rem;
+  margin: 0;
+  font-family: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: $color-white;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 5.5rem;
+
+  &--main {
+    letter-spacing: 1rem;
+    font-size: 6rem;
+    display: block;
+    font-weight: 300;
+    background-color: rgba(255, 255, 255, 0.158);
+    margin-bottom: 1rem;
+    padding: 10px;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 1.75rem;
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.164);
+    padding: 1rem;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+  }
+}

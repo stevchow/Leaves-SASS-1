@@ -1,25 +1,39 @@
-/*
-COLORS:
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
-rgb(128, 161, 141)
-rgb(62, 140, 204)
-
-*/
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
-}
+  font-size: 62.5%; }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 body {
   padding: 3rem;
@@ -27,131 +41,34 @@ body {
   font-family: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #fff;
-}
-
-.header {
-  height: 95vh;
-  background: linear-gradient(
-      to right bottom,
-      rgba(128, 161, 141, 0.781),
-      rgba(62, 140, 204, 0.397)
-    ),
-    url(../img/hero.jpg);
-  background-position: top;
-  background-size: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 70vh, 40% 100%, 0 100%);
-  position: relative;
-}
-
-.header::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-      to right bottom,
-      rgba(128, 161, 141, 0.781),
-      rgba(62, 140, 204, 0.397)
-    ),
-    url(../img/hero.jpg);
-  background-position: top;
-  background-size: cover;
-  clip-path: polygon(43.2% 100%, 100% 71.5vh, 100% 100%);
-}
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-
-.header__logo {
-  height: 5.5rem;
-}
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+  color: #ffeeee; }
 
 .heading-primary {
-  color: white;
+  color: #ffeeee;
   text-transform: uppercase;
   backface-visibility: hidden;
-  margin-bottom: 5.5rem;
-}
+  margin-bottom: 5.5rem; }
+  .heading-primary--main {
+    letter-spacing: 1rem;
+    font-size: 6rem;
+    display: block;
+    font-weight: 300;
+    background-color: rgba(255, 255, 255, 0.158);
+    margin-bottom: 1rem;
+    padding: 10px;
+    animation-name: moveInLeft;
+    animation-duration: 1s; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 1.75rem;
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.164);
+    padding: 1rem;
+    animation-name: moveInRight;
+    animation-duration: 1s; }
 
-.heading-primary--main {
-  letter-spacing: 1rem;
-  font-size: 6rem;
-  display: block;
-  font-weight: 300;
-  background-color: rgba(255, 255, 255, 0.158);
-  margin-bottom: 1rem;
-  padding: 10px;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-}
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  letter-spacing: 1.75rem;
-  font-weight: 700;
-  background-color: rgba(255, 255, 255, 0.164);
-  padding: 1rem;
-  animation-name: moveInRight;
-  animation-duration: 1s;
-}
-
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-  80% {
-    transform: translateX(1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-  80% {
-    transform: translateX(-1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes moveInTop {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
   padding: 1.5rem 4rem;
@@ -160,23 +77,24 @@ body {
   border-radius: 2rem;
   position: relative;
   z-index: 1;
-  font-size: 1.6rem;
-}
+  font-size: 1.6rem; }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scale(1.4, 1.6);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--white {
   background-color: rgba(53, 150, 240, 0.89);
-  color: #fff;
-}
+  color: #ffeeee; }
+  .btn--white::after {
+    background-color: rgba(53, 150, 240, 0.89); }
 
 .btn::after {
   content: "";
@@ -188,31 +106,48 @@ body {
   top: 0;
   left: 0;
   transition: all 0.3s;
-  border-radius: 2rem;
-}
-
-.btn:hover::after {
-  transform: scale(1.4, 1.6);
-  opacity: 0;
-}
-
-.btn--white::after {
-  background-color: rgba(53, 150, 240, 0.89);
-}
+  border-radius: 2rem; }
 
 .btn--animated {
   animation: moveInTop 0.8s ease-in 0.1s;
-  animation-fill-mode: backwards;
-}
+  animation-fill-mode: backwards; }
+
+.header {
+  height: 95vh;
+  background: linear-gradient(to right bottom, rgba(62, 140, 204, 0.781), rgba(128, 161, 141, 0.397)), url(../img/hero.jpg);
+  background-position: top;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 70vh, 40% 100%, 0 100%);
+  position: relative; }
+  .header::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right bottom, rgba(128, 161, 141, 0.781), rgba(62, 140, 204, 0.397)), url(../img/hero.jpg);
+    background-position: top;
+    background-size: cover;
+    clip-path: polygon(43.2% 100%, 100% 71.5vh, 100% 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 5.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 @media (max-width: 900px) {
   html {
-    font-size: 8px;
-  }
-}
+    font-size: 8px; } }
 
 @media (max-width: 600px) {
   html {
-    font-size: 6.5px;
-  }
-}
+    font-size: 6.5px; } }
